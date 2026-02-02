@@ -12,7 +12,7 @@ class UserAdmin(BaseUserAdmin):
     search_fields = ('email', 'name')
     ordering = ('id',)
     fieldsets = (
-        (None, {'fields': ('email', 'password')}), # None refers to title of the section in admin page
+        (None, {'fields': ('email', 'password')}),      # None refers to title of the section in admin page
         (_('Personal Info'), {'fields': ('name',)}),
         (_('Permissions'), {
             'fields': (
@@ -26,7 +26,7 @@ class UserAdmin(BaseUserAdmin):
     readonly_fields = ('last_login',)
     add_fieldsets = (
         (None, {
-            'classes': ('wide',), # A CSS classes for fields look quiet wide.
+            'classes': ('wide',),       # A CSS classes for fields look quiet wide.
             'fields': (
                 'email',
                 'password1',
