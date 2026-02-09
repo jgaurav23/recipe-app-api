@@ -2,7 +2,6 @@
 urls mapping for the user API's
 """
 from django.urls import path
-
 from user import views
 
 
