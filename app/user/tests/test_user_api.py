@@ -1,5 +1,5 @@
 """
-Tests for then user api
+Tests for the user API.
 """
 from django.test import TestCase
 from django.contrib.auth import get_user_model
@@ -16,7 +16,7 @@ def create_user(**params):
     return get_user_model().objects.create_user(**params)
 
 
-class PUBLICUSERAPITESTS(TestCase):
+class PublicUserApiTests(TestCase):
     """ Test the public features of teh user API. """
 
     def setUp(self):
@@ -27,7 +27,7 @@ class PUBLICUSERAPITESTS(TestCase):
         payload = {
             'email' : 'test@example.com',
             'password' : 'testpass123',
-            'name' : 'Tets name'
+            'name' : 'Test name'
         }
         res = self.client.post(CREATE_USER_URL, payload)
 
@@ -41,7 +41,7 @@ class PUBLICUSERAPITESTS(TestCase):
         payload = {
             'email' : 'test@example.com',
             'password' : 'testpass123',
-            'name' : 'Tets name'
+            'name' : 'Test name'
         }
         create_user(**payload)
         res = self.client.post(CREATE_USER_URL, payload)
@@ -53,7 +53,7 @@ class PUBLICUSERAPITESTS(TestCase):
         payload = {
             'email' : 'test@example.com',
             'password' : 'pw',
-            'name' : 'Tets name'
+            'name' : 'Test name'
         }
         res = self.client.post(CREATE_USER_URL, payload)
 
